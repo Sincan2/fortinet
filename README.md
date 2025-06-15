@@ -79,7 +79,7 @@ urllib3
 Jalankan tool melalui skrip utama:
 
 ```bash
-bash sodok.sh
+./sodok.sh
 ```
 
 ### Langkah:
