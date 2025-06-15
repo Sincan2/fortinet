@@ -1,9 +1,11 @@
-````markdown
 # 🔥 Sincan2 Fortinet Exploitation Framework
+> **by MHL TEAM**  
 
-![Tampilan Demo 1](demo.png)
-![Tampilan Demo 2](demo2.png)
+![Screenshot](demo.png)
+![Screenshot](demo2.png)
 
+---
+````markdown
 ## 💡 Alur Kerja Tool
 
 Sincan2 menggunakan arsitektur **modular** yang memisahkan antarmuka pengguna, mesin utama, dan logika eksploitasi demi kemudahan penggunaan dan pengembangan.
