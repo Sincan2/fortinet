@@ -1,7 +1,7 @@
 ````markdown
 # 🔥 Sincan2 Fortinet Exploitation Framework
 
-![Demo](demo.png)
+!(demo.png)
 
 ## 💡 Alur Kerja Tool
 
@@ -17,14 +17,14 @@ Sincan2 menggunakan arsitektur **modular** yang memisahkan antarmuka pengguna, m
 - Konfirmasi sebelum eksploitasi yang memerlukan listener.
 - Membangun dan mengeksekusi perintah akhir ke `sincan2.py`.
 
-#### `sincan2.py` - Mesin Utama (Core Engine)
+#### `sincan2.py` - (Core Engine)
 - Menerima argumen dari `sodok.sh` atau langsung dari CLI.
 - Mengelola daftar target tunggal atau dari file.
 - Memanggil fungsi eksploitasi dari `_exploits.py` secara berurutan.
 - Melewati pengujian CVE jika parameter tidak lengkap (contoh: `--forti-ssh-key`, `--reverse-host`).
 - Menampilkan status real-time: Rentan, Tidak Rentan, Error, atau Dilewati.
 
-#### `_exploits.py` - Pustaka Eksploitasi
+#### `_exploits.py` - Eksploitasi
 - Berisi implementasi teknis untuk setiap CVE Fortinet yang didukung.
 - Tiap fungsi menerima target + argumen, mengembalikan hasil terstruktur.
 - Fokus pada logika eksploitasi — **tidak menangani antarmuka**.
