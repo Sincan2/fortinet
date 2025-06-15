@@ -1,7 +1,8 @@
 ````markdown
 # 🔥 Sincan2 Fortinet Exploitation Framework
 
-(demo.png)
+![Screenshot](demo.png)
+![Screenshot](demo2.png)
 
 ## 💡 Alur Kerja Tool
 
