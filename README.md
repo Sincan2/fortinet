@@ -108,22 +108,3 @@ Jalankan tool melalui skrip utama:
 **MHL TEAM**
 
 ```
-
----
-
-### 📂 Pastikan Struktur Folder Anda seperti Ini:
-```
-
-fortinet/
-├── demo.png
-├── demo2.png
-├── sodok.sh
-├── sincan2.py
-├── \_exploits.py
-├── requirements.txt
-└── README.md
-
-```
-
-Sudah siap digunakan di GitHub dan akan langsung merender gambar jika `demo.png` dan `demo2.png` sudah benar-benar di-*push* ke repo. Jika Anda butuh file ZIP berisi semua struktur ini, beri tahu saya.
-```
