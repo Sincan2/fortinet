@@ -1,1 +1,18 @@
-# fortinet
+Sebuah toolkit yang sangat efisien, dirancang untuk mengotomatiskan proses eksploitasi yang seringkali rumit. Dilengkapi dengan runner Bash yang cerdas, Sincan2 memungkinkan Anda untuk fokus pada hasil, bukan pada proses manual yang berulang-ulang.🚀 Fitur UnggulanOtomatisasi Cerdas:Deteksi IP Publik Otomatis: Secara otomatis mendeteksi dan menyarankan IP publik Anda untuk callback dan reverse shell, mengurangi kesalahan input.Deteksi Kunci SSH Otomatis: Mencari kunci SSH (id_rsa.pub / id_ed25519.pub) di direktori ~/.ssh/ untuk mempercepat proses eksploitasi CVE-2022-40684.Fokus Eksklusif pada Fortinet: Didesain dari awal untuk menguji serangkaian CVE yang paling berdampak pada perangkat FortiGate.Runner Bash Interaktif (sodok.sh): Antarmuka berbasis menu yang intuitif untuk memandu Anda melalui setiap langkah, dari pengaturan parameter hingga eksekusi.Dukungan Multi-CVE: Mengimplementasikan beberapa PoC untuk kerentanan kritis dalam satu alat yang terintegrasi.Mode Pindai Fleksibel: Mendukung pemindaian pada target tunggal maupun massal dari sebuah file, cocok untuk audit skala kecil hingga besar.Konfirmasi Pra-Eksploitasi: Memberikan jeda konfirmasi sebelum meluncurkan eksploitasi yang memerlukan listener, memastikan Anda siap menerima koneksi masuk.🛡️ Dukungan Kerentanan (CVE)Saat ini, Sincan2 mendukung pengujian dan eksploitasi untuk kerentanan berikut:CVE IDDeskripsiTipe EksploitasiCVE-2022-40684Authentication BypassPenambahan Kunci SSHCVE-2022-42475Pre-Authentication RCE di SSL-VPNCrash TestCVE-2023-27997Heap-based Buffer Overflow di SSL-VPNReverse ShellCVE-2024-21762Out-of-Bounds Write di SSL-VPNReverse Shell / DNS Callback🛠️ Instalasi1. PrasyaratPastikan Anda memiliki git, python3, dan pip terpasang di sistem Anda. curl juga direkomendasikan untuk fitur deteksi IP otomatis.2. Kloning Repositorigit clone [https://github.com/Sincan2/fortinet.git](https://github.com/Sincan2/fortinet.git)
+cd fortinet
+3. Instal DependensiSincan2 memerlukan beberapa pustaka Python. Cukup jalankan perintah berikut untuk menginstalnya:pip install -r requirements.txt
+Jika file requirements.txt belum ada, buat file tersebut dengan isi di bawah ini:# requirements.txt
+requests
+pwntools
+pycryptodome
+urllib3
+🏃‍♂️ Cara MenjalankanSeluruh operasi dijalankan melalui skrip runner sodok.sh yang sangat mudah digunakan.bash sodok.sh
+Anda akan disambut dengan menu utama:==================== SINCAN2 FORTINET RUNNER ====================
+
+  [1] 🎯  Mulai Pindai Target Tunggal
+  [2] 📂  Mulai Pindai Massal dari File
+
+  [3] 🚪  Keluar
+
+================================================================
+Contoh Skenario: Eksploitasi Target TunggalPilih opsi [1] dari menu utama.Masukkan URL Target: Masukkan URL lengkap target Anda (misal: https://192.168.10.50:10443).Pengaturan Parameter: Skrip akan memandu Anda melalui serangkaian pertanyaan cerdas:Kunci SSH: Skrip akan menawarkan kunci yang ditemukan di ~/.ssh/id_rsa.pub. Cukup tekan y untuk konfirmasi.IP Publik: IP publik Anda akan disarankan sebagai default untuk callback dan reverse shell. Cukup tekan [ENTER] untuk menggunakannya.Port Listener: Masukkan port yang Anda gunakan pada nc.Konfirmasi Listener: Jika Anda mengisi parameter reverse shell, skrip akan berhenti dan meminta Anda memastikan nc -lnvp <port> sudah berjalan sebelum melanjutkan.Skrip akan secara otomatis menjalankan semua tes CVE yang relevan berdasarkan parameter yang Anda berikan.⚠️ DisclaimerAlat ini dibuat untuk tujuan pendidikan dan pengujian keamanan yang sah. Pengguna bertanggung jawab penuh atas tindakan mereka. Jangan pernah menggunakan alat ini pada sistem yang tidak Anda miliki izin eksplisit untuk mengujinya. Penulis dan kontributor tidak bertanggung jawab atas penyalahgunaan atau kerusakan yang disebabkan oleh program ini.✉️ Kontak & KreditDikembangkan oleh: MHL TEAMGitHub: github.com/Sincan2
